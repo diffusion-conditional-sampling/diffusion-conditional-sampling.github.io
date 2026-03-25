@@ -289,6 +289,7 @@
 
             <div class="button-group">
                 <a href="https://arxiv.org/abs/2508.02964" target="_blank" class="btn">📜 ArXiv</a>
+                <a href="diffusion_conditional_sampling.pdf" target="_blank" class="btn">📄 PDF</a>
                 <a href="#" class="btn">💻 Code (Coming Soon)</a>
             </div>
         </header>
@@ -570,6 +571,114 @@
                             <td>0.423</td>
                             <td>24.16</td>
                             <td>120.1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table: ImageNet 0.01 -->
+            <h3>Quantitative Evaluation (ImageNet, $\sigma_y = 0.01$)</h3>
+            <div class="table-container">
+                <table class="academic-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="text-align: left;">Solver</th>
+                            <th colspan="3">Super-Resolution x4</th>
+                            <th colspan="3">Random Inpainting</th>
+                            <th colspan="3">Box Inpainting</th>
+                            <th colspan="3">Gaussian Deblurring</th>
+                            <th colspan="3">Motion Deblurring</th>
+                        </tr>
+                        <tr>
+                            <th>LPIPS $\downarrow$</th>
+                            <th>PSNR $\uparrow$</th>
+                            <th>FID $\downarrow$</th>
+                            <th>LPIPS $\downarrow$</th>
+                            <th>PSNR $\uparrow$</th>
+                            <th>FID $\downarrow$</th>
+                            <th>LPIPS $\downarrow$</th>
+                            <th>PSNR $\uparrow$</th>
+                            <th>FID $\downarrow$</th>
+                            <th>LPIPS $\downarrow$</th>
+                            <th>PSNR $\uparrow$</th>
+                            <th>FID $\downarrow$</th>
+                            <th>LPIPS $\downarrow$</th>
+                            <th>PSNR $\uparrow$</th>
+                            <th>FID $\downarrow$</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: left;"><strong>DCS (Ours)</strong></td>
+                            <td>0.238</td>
+                            <td>23.45</td>
+                            <td class="best-result">39.41</td>
+                            <td>0.142</td>
+                            <td class="best-result">26.06</td>
+                            <td>34.46</td>
+                            <td class="best-result">0.230</td>
+                            <td class="best-result">20.63</td>
+                            <td>37.11</td>
+                            <td class="best-result">0.253</td>
+                            <td>24.22</td>
+                            <td class="best-result">38.96</td>
+                            <td class="best-result">0.203</td>
+                            <td class="best-result">24.62</td>
+                            <td>38.63</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">DPS</td>
+                            <td>0.309</td>
+                            <td>23.99</td>
+                            <td>49.81</td>
+                            <td>0.266</td>
+                            <td>25.05</td>
+                            <td>38.87</td>
+                            <td>0.301</td>
+                            <td>18.76</td>
+                            <td class="best-result">34.85</td>
+                            <td>0.493</td>
+                            <td>19.14</td>
+                            <td>61.59</td>
+                            <td>0.460</td>
+                            <td>18.65</td>
+                            <td>53.21</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">DDNM</td>
+                            <td>0.258</td>
+                            <td>20.27</td>
+                            <td>28.35</td>
+                            <td class="best-result">0.084</td>
+                            <td>25.16</td>
+                            <td>51.33</td>
+                            <td>0.333</td>
+                            <td>17.42</td>
+                            <td>85.41</td>
+                            <td>0.456</td>
+                            <td>24.35</td>
+                            <td>67.98</td>
+                            <td>0.694</td>
+                            <td>5.72</td>
+                            <td>304.2</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">RED-Diff</td>
+                            <td class="best-result">0.090</td>
+                            <td class="best-result">28.17</td>
+                            <td>57.06</td>
+                            <td>0.239</td>
+                            <td>25.07</td>
+                            <td class="best-result">16.71</td>
+                            <td>0.386</td>
+                            <td>19.99</td>
+                            <td>54.38</td>
+                            <td>0.459</td>
+                            <td class="best-result">24.70</td>
+                            <td>68.71</td>
+                            <td>0.376</td>
+                            <td>23.66</td>
+                            <td class="best-result">23.66</td>
                         </tr>
                     </tbody>
                 </table>
