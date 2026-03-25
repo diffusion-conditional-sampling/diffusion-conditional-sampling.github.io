@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injecting Measurement Information Yields a Fast and Noise-Robust Diffusion-Based Inverse Problem Solver</title>
+    
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --text-color: #333333;
+            --light-text: #666666;
+            --bg-color: #ffffff;
+            --accent-color: #2c3e50;
+            --link-color: #2980b9;
+            --code-bg: #f8f9fa;
+        }
+
+        /* Base Typography and Layout */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eaeaea;
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--light-text);
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero / Header Section */
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .authors {
+            font-size: 1.2em;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .affiliation {
+            font-size: 1em;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px; /* Pill shape */
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: #1a252f;
+            transform: translateY(-1px);
+        }
+
+        /* Content Sections */
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        p {
+            font-size: 1.05em;
+            text-align: justify;
+        }
+
+        /* Images and Figures */
+        .figure {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .caption {
+            font-size: 0.9em;
+            color: var(--light-text);
+            margin-top: 15px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        /* Image Grid for Results */
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .grid-item p {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 10px;
+            color: var(--light-text);
+        }
+
+        /* BibTeX Section */
+        pre {
+            background-color: var(--code-bg);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+            border: 1px solid #eaeaea;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--light-text);
+            font-size: 0.9em;
+            border-top: 1px solid #eaeaea;
+            margin-top: 60px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .grid-2x2 {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 1.8em; }
+            .button-group { flex-direction: column; align-items: center; }
+            .btn { width: 80%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#home">Home</a>
+            <a href="#abstract">Abstract</a>
+            <a href="#method">Method</a>
+            <a href="#results">Results</a>
+            <a href="#bibtex">BibTeX</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header id="home">
+            <h1>Injecting Measurement Information Yields a Fast and Noise-Robust Diffusion-Based Inverse Problem Solver</h1>
+            
+            <div class="authors">
+                <span>Anonymous Author 1</span> &bull; 
+                <span>Anonymous Author 2</span> &bull; 
+                <span>Anonymous Author 3</span>
+            </div>
+            
+            <div class="affiliation">
+                Currently under anonymous submission
+            </div>
+
+            <div class="button-group">
+                <a href="#" class="btn">📄 Read Paper</a>
+                <a href="#" class="btn">💻 Code (Coming Soon)</a>
+                <a href="#" class="btn">📜 ArXiv</a>
+            </div>
+        </header>
+
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <p>
+                Diffusion models have been firmly established as principled zero-shot solvers for linear and nonlinear inverse problems, owing to their powerful image prior and iterative sampling algorithm. These approaches often rely on Tweedie's formula, which relates the diffusion variate \(x_t\) to the posterior mean \(\mathbb{E}[x_0|x_t]\), in order to guide the diffusion trajectory with an estimate of the final denoised sample \(x_0\). However, this does not consider information from the measurement \(y\), which must then be integrated downstream. 
+            </p>
+            <p>
+                In this work, we propose to estimate the conditional posterior mean \(\mathbb{E}[x_0|x_t,y]\), which can be formulated as the solution to a lightweight, single-parameter maximum likelihood estimation problem. The resulting prediction can be integrated into any standard sampler, resulting in a fast and memory-efficient inverse solver. Our optimizer is amenable to a noise-aware likelihood-based stopping criteria that is robust to measurement noise in \(y\). We demonstrate comparable or improved performance against a wide selection of contemporary inverse solvers across multiple datasets and tasks.
+            </p>
+        </section>
+
+        <section id="method">
+            <h2>Method Overview</h2>
+            <p>
+                Current solvers struggle because estimating the posterior mean without the measurement context often leads to poor, noisy predictions. By instead calculating the <em>conditional</em> posterior mean, we ensure the diffusion trajectory stays consistent with the actual measurement throughout the reverse process.
+            </p>
+
+            <div class="figure">
+                <img src="https://via.placeholder.com/800x400/f4f4f4/333333?text=Figure+1:+Trajectory+Shift+Visual" alt="Trajectory shift visual">
+                <div class="caption">
+                    <strong>Figure 1:</strong> The posterior mean before and after conditioning on \(y\) for the random inpainting inverse problem. Showing the trajectory shift towards the true manifold.
+                </div>
+            </div>
+
+            <div class="figure">
+                <img src="https://via.placeholder.com/800x350/f4f4f4/333333?text=Figure+4:+DCS+Algorithm+Diagram" alt="DCS Algorithm Diagram">
+                <div class="caption">
+                    <strong>Figure 4:</strong> Our proposed Diffusion Conditional Sampling (DCS) algorithm. An initial noise prediction is corrected via a noise-aware maximization scheme of the measurement likelihood, resulting in a fast, backpropagation-free step.
+                </div>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2>Qualitative Results</h2>
+            <p>
+                DCS strikes a careful balance between preserving image quality and remaining robust to measurement noise, outperforming standard projection and posterior solvers across various noise levels (\(\sigma_y\)).
+            </p>
+
+            <h3>Inpainting & Deblurring Tasks</h3>
+            <div class="grid-2x2">
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x300/f4f4f4/333333?text=Random+Inpainting+(Fig+5)" alt="Random Inpainting Results">
+                    <p>Random Inpainting</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x300/f4f4f4/333333?text=Box+Inpainting+(Fig+12)" alt="Box Inpainting Results">
+                    <p>Box Inpainting</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x300/f4f4f4/333333?text=Gaussian+Deblur+(Fig+13)" alt="Gaussian Deblurring Results">
+                    <p>Gaussian Deblurring</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x300/f4f4f4/333333?text=Motion+Deblur+(Fig+14)" alt="Motion Deblurring Results">
+                    <p>Motion Deblurring</p>
+                </div>
+            </div>
+            <div class="caption">
+                <strong>Demonstration:</strong> Highlights our solver's stability across various noise levels (\(\sigma_y=0.01, 0.1, 0.5\)) compared to DDNM, RED-Diff, and DPS. Notably, DCS uniquely retains structure in highly ill-posed, high-noise motion blur scenarios where other methods fail.
+            </div>
+        </section>
+
+        <section id="bibtex">
+            <h2>Citation</h2>
+            <pre><code>@article{anonymous2024injecting,
+  title={Injecting Measurement Information Yields a Fast and Noise-Robust Diffusion-Based Inverse Problem Solver},
+  author={Anonymous},
+  journal={Under Review},
+  year={2024}
+}</code></pre>
+        </section>
+
+        <footer>
+            <p>This project page was generated for anonymous review.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
