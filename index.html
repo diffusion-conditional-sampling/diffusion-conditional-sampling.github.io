@@ -23,6 +23,7 @@
             --bg-color: #ffffff;
             --accent-color: #2c3e50;
             --code-bg: #f8f9fa;
+            --highlight-bg: #edf2f7;
         }
 
         body {
@@ -95,6 +96,18 @@
             font-size: 0.85em;
             color: #aaa;
             font-style: italic;
+        }
+
+        .venue-banner {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--highlight-bg);
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.05em;
+            border-radius: 8px;
+            border: 1px solid #d2dce6;
         }
 
         .button-group {
@@ -287,9 +300,12 @@
                 * Equal contribution
             </div>
 
+            <div class="venue-banner">
+                🎉 Accepted to AISTATS 2026 (Tangier, Morocco)
+            </div>
+
             <div class="button-group">
                 <a href="https://arxiv.org/abs/2508.02964" target="_blank" class="btn">📜 ArXiv</a>
-                <a href="diffusion_conditional_sampling.pdf" target="_blank" class="btn">📄 PDF</a>
                 <a href="https://github.com/jpatsenker/diffusion_conditional_sampling" target="_blank" class="btn">💻 Code</a>
             </div>
         </header>
